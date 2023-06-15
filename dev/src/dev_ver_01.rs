@@ -1,7 +1,5 @@
-mod types;
-use types::{FooEnum, FooStruct};
-
-use crate::ver01::types::Ver01;
+mod v1_types;
+use v1_types::{FooEnum, FooStruct, Ver01};
 
 pub fn run_version_01(run: bool) {
     if !run {

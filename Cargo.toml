@@ -2,4 +2,6 @@
 members = [
   "dev",
   "ver_01",
+  "ver_02",
+  "ver_03",
 ]

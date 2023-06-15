@@ -5,7 +5,7 @@ pub fn version_01_derive_macro(tokens: proc_macro::TokenStream) -> proc_macro::T
 
     // --- Parse Token Stream --- //
     let ast: syn::DeriveInput = syn::parse(tokens.clone()).unwrap();
-    eprintln!("ast: {:#?}", ast);
+    // eprintln!("ast: {:#?}", ast);
 
     // --- Attributes --- //
     for attr in ast.attrs {

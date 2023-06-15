@@ -1,12 +1,14 @@
 [package]
-name = "dev"
+name = "ver_03"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cargo-expand = "1.0.52"
-ver_01 = { path = "../ver_01" }
-ver_02 = { path = "../ver_02" }
-ver_03 = { path = "../ver_03" }
+proc-macro2 = "1.0.60"
+quote = "1.0.28"
+syn = "2.0.18"
+
+[lib]
+proc-macro = true
