@@ -1,7 +1,6 @@
 mod enum_data;
+mod parent_attr;
 mod types;
-
-use types::ParentAttributes;
 
 // === MAIN MACRO === //
 
@@ -24,7 +23,10 @@ fn version_03_derive_macro2(
     let mut ast = syn::parse2::<syn::DeriveInput>(item)?;
 
     // --- Data Type --- //
-    let edata = enum_data::get_enum_data(&mut ast)?;
+    let _edata = enum_data::get_enum_data(&mut ast)?;
+
+    // --- Parent Attributes --- //
+    let (parent_a, parent_b) = parent_attr::get_parent_attributes(&mut ast)?;
 
     // --- Ident and Generics --- //
     let ident = ast.ident;
@@ -34,7 +36,8 @@ fn version_03_derive_macro2(
     Ok(quote::quote! {
       impl #impl_generics Version03 for #ident #type_generics #where_clause {
         fn get_parent(&self) -> &'static str {
-          "Hello World"
+          // "Hello World"
+          concat!("Parent: { a: ", #parent_a, ", b: ", #parent_b, " }" )
         }
       }
     })

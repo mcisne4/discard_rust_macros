@@ -5,6 +5,7 @@ pub trait Version03 {
 }
 
 #[derive(Version03)]
+#[parent(a = 4, b = 34)]
 enum AnEnum {
     Item01,
 }
